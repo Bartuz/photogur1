@@ -1,10 +1,14 @@
 Photogur1::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  post 'pictures' => 'pictures#create'
+
   get 'pictures' => 'pictures#index'
 
+  get 'pictures/new'=> 'pictures#new'
+
   get 'pictures/:id' => 'pictures#show', as: "picture"
-  
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
