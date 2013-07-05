@@ -8,6 +8,12 @@ class PicturesController < ApplicationController
 		@picture = Picture.new
 	end
 
+	def destroy
+  @picture = Picture.find(params[:id])
+  @picture.destroy
+  redirect_to pictures_url
+end
+
 	def create
   # Make the variable @picture a new picture with the given params
   @picture = Picture.new(params[:picture])
